@@ -1,4 +1,6 @@
 from tkinter import*
+from tkinter import messagebox
+
 import random
 
 def nextMove(row, column):
@@ -15,7 +17,10 @@ def nextMove(row, column):
                 label.config(text=(players[0]+" wins"))
             
             elif checkWinner() =="Tie":
-                label.config(text="Tie!")
+                # label.config(text="Tie!")
+                messagebox.showinfo("", "Tie!")
+                label.config(text=(""))
+                
         
         else:
             buttons[row][column]['text']=player
@@ -28,8 +33,10 @@ def nextMove(row, column):
                 label.config(text=(players[1]+" wins"))
             
             elif checkWinner() =="Tie":
-                label.config(text=("Tie!")) 
-
+                # label.config(text=("Tie!"))
+                messagebox.showinfo("", "Tie!") 
+                label.config(text=(""))
+                
 
 def checkWinner():
     # Vertical and Horizontal checking
